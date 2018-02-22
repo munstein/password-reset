@@ -2,11 +2,11 @@
     <string name="app_name">password-reset</string>
     <string name="activity_main_title">Mudar Senha</string>
     <string name="activity_confirmation_title">OK</string>
-    <string name="message">Para fazer uma nova senha, basta seguir estas regrinhas básicas:</string>
+    <string name="message_top">Para fazer uma nova senha, basta seguir estas regrinhas básicas:</string>
     <string name="rule_first">- escolher no mínimo 6 caracters;</string>
     <string name="rule_second">- ter pelo menos 1 número;</string>
     <string name="security_info">E para sua segurança, não utilize infos pessoais como data
-        de nascimento e nem sequências como "123456" ou "abcdef", ok?</string>
+        de nascimento e nem sequências como \"123456\" ou \"abcdef\", ok?</string>
     <string name="hint_new_password">nova senha</string>
     <string name="hint_repeat_password">repetir nova senha</string>
     <string name="button_confirm">confirmar</string>
