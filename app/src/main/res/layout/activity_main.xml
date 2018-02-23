@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.munstein.passwordreset.views.main.MainActivity">
+    tools:context="com.munstein.passwordreset.views.main.MainActivity"
+    android:background="@color/colorBackground">
 
     <TextView
         android:id="@+id/txt_msg_top"
@@ -101,19 +102,31 @@
             app:passwordToggleTint="@color/colorTextGray">
 
             <EditText
+                android:id="@+id/edit_new_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_new_password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:maxLength="18"/>
 
 
         </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/txt_password_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_small"
+            android:layout_below="@id/txtinput_new_password"
+            android:layout_marginEnd="@dimen/edit_reset_password_margin"
+            android:layout_marginStart="@dimen/edit_reset_password_margin"
+            android:textColor="@color/colorError"/>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/txtinput_repeat_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtinput_new_password"
+            android:layout_below="@id/txt_password_error"
             android:layout_marginEnd="@dimen/edit_reset_password_margin"
             android:layout_marginStart="@dimen/edit_reset_password_margin"
             app:passwordToggleDrawable="@drawable/ic_show_hide_password"
@@ -121,10 +134,12 @@
             app:passwordToggleTint="@color/colorTextGray">
 
             <EditText
+                android:id="@+id/edit_repeat_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_repeat_password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:maxLength="18"/>
 
 
         </android.support.design.widget.TextInputLayout>
@@ -140,7 +155,7 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_confirm"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/default_margin"
@@ -149,6 +164,7 @@
         android:layout_marginTop="@dimen/default_margin"
         android:background="@drawable/round_border_inactive"
         android:text="@string/button_confirm"
+        android:enabled="false"
         android:textColor="@color/colorTextButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

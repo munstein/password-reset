@@ -17,7 +17,7 @@ class PasswordValidator : IPasswordValidator{
     }
 
     override fun passwordHasMinimumSize(password: String): Boolean {
-        return password.length >= 6
+        return password.length >= minimumSize
     }
 
     override fun passwordsAreEqual(password: String, newPassword: String): Boolean {
