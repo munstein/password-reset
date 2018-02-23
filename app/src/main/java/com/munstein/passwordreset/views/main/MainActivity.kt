@@ -22,7 +22,10 @@ class MainActivity : BaseActivity(), MainMVP.view, View.OnClickListener, TextWat
     private lateinit var msgDialog : MaterialDialog
     private lateinit var presenter: MainMVP.presenter
 
-    val userId = 1000
+    private val userId = 1000
+
+    private lateinit var colorStateListError : ColorStateList
+    private lateinit var colorStateListDefault : ColorStateList
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -46,6 +49,16 @@ class MainActivity : BaseActivity(), MainMVP.view, View.OnClickListener, TextWat
         edit_new_password.addTextChangedListener(this)
         btn_confirm.setOnClickListener(this)
 
+        init()
+
+    }
+
+    fun init(){
+        colorStateListError = ColorStateList.valueOf(
+                ContextCompat.getColor(this, R.color.colorError))
+
+        colorStateListDefault = ColorStateList.valueOf(
+                ContextCompat.getColor(this, R.color.colorAccent))
     }
 
     override fun onClick(view: View?) {
@@ -84,10 +97,9 @@ class MainActivity : BaseActivity(), MainMVP.view, View.OnClickListener, TextWat
 
     override fun clearError() {
         txt_password_error.text = ""
-        var colorStateList = ColorStateList.valueOf(
-                ContextCompat.getColor(this, R.color.colorAccent))
-        ViewCompat.setBackgroundTintList(edit_new_password,colorStateList)
-        ViewCompat.setBackgroundTintList(edit_repeat_password,colorStateList)
+
+        ViewCompat.setBackgroundTintList(edit_new_password,colorStateListDefault)
+        ViewCompat.setBackgroundTintList(edit_repeat_password,colorStateListDefault)
     }
 
     override fun showErrorViews() {
@@ -95,10 +107,8 @@ class MainActivity : BaseActivity(), MainMVP.view, View.OnClickListener, TextWat
         imgview_locker.setImageDrawable(getDrawable(R.drawable.ic_password))
         btn_confirm.isEnabled = false
 
-        var colorStateList = ColorStateList.valueOf(
-                ContextCompat.getColor(this, R.color.colorError))
-        ViewCompat.setBackgroundTintList(edit_new_password,colorStateList)
-        ViewCompat.setBackgroundTintList(edit_repeat_password,colorStateList)
+        ViewCompat.setBackgroundTintList(edit_new_password,colorStateListError)
+        ViewCompat.setBackgroundTintList(edit_repeat_password,colorStateListError)
     }
 
     override fun showSuccessViews() {
