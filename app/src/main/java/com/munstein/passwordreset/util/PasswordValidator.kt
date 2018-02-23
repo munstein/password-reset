@@ -5,6 +5,8 @@ package com.munstein.passwordreset.util
  */
 class PasswordValidator : IPasswordValidator{
 
+    private val minimumSize = 6
+
     override fun passwordsAreValid(password: String, newPassword: String): Boolean {
         if(passwordsAreEqual(password,newPassword)){
             if(passwordHasMinimumSize(password) &&
@@ -13,8 +15,6 @@ class PasswordValidator : IPasswordValidator{
         }
         return false
     }
-
-    private val minimumSize = 6
 
     override fun passwordHasMinimumSize(password: String): Boolean {
         return password.length >= 6

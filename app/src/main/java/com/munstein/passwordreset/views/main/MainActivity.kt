@@ -1,7 +1,8 @@
-package com.munstein.passwordreset
+package com.munstein.passwordreset.views.main
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.munstein.passwordreset.R
 
 class MainActivity : AppCompatActivity() {
 

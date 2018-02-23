@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">password-reset</string>
+    <string name="app_name">Mudar senha</string>
     <string name="activity_main_title">Mudar Senha</string>
     <string name="activity_confirmation_title">OK</string>
     <string name="message_top">Para fazer uma nova senha, basta seguir estas regrinhas básicas:</string>
@@ -13,4 +13,7 @@
     <string name="hint_password_match_error">ops as senhas não são iguais</string>
     <string name="hint_password_number_error">ops sua senha não possui um número</string>
     <string name="hint_password_length_error">ops sua senha é curta demais</string>
+    <string name="confirmation_message">Cadastro realizado com sucesso ;)</string>
+    <string name="ok">OK</string>
+    <string name="loading_message">carregando...</string>
 </resources>
