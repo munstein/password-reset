@@ -2,7 +2,7 @@
     <string name="app_name">Mudar senha</string>
     <string name="activity_main_title">Mudar Senha</string>
     <string name="activity_confirmation_title">OK</string>
-    <string name="message_top">Para fazer uma nova senha, basta seguir estas regrinhas básicas:</string>
+    <string name="message_top">Para fazer uma <b>nova senha</b>, basta seguir estas regrinhas básicas:</string>
     <string name="rule_first">- escolher no mínimo 6 caracters;</string>
     <string name="rule_second">- ter pelo menos 1 número;</string>
     <string name="security_info">E para sua segurança, não utilize infos pessoais como data
