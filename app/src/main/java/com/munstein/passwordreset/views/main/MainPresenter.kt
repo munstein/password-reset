@@ -8,24 +8,23 @@ import io.reactivex.schedulers.Schedulers
 /**
  * Created by @Munstein on 23/02/2018.
  */
-class MainPresenter : MainMVP.presenter{
+class MainPresenter : MainMVP.presenter {
 
-    val view : MainMVP.view
-    val passwordValidator : IPasswordValidator
-    val model : MainMVP.model
+    val view: MainMVP.view
+    val passwordValidator: IPasswordValidator
+    val model: MainMVP.model
 
     val errorMsg = "Não foi possível concluir a ação. Tente novamente."
 
-
-    constructor(view : MainMVP.view, model : MainMVP.model, passwordValidator: IPasswordValidator){
+    constructor(view: MainMVP.view, model: MainMVP.model, passwordValidator: IPasswordValidator) {
         this.view = view
         this.passwordValidator = passwordValidator
         this.model = model
     }
 
-    override fun validate(password: String, confirmPassword: String) : Boolean{
+    override fun validate(password: String, confirmPassword: String): Boolean {
 
-        if(password.length>0  && confirmPassword.length >0) {
+        if (password.length > 0 && confirmPassword.length > 0) {
 
             view.showErrorViews()
 
@@ -47,7 +46,7 @@ class MainPresenter : MainMVP.presenter{
             view.clearError()
             view.showSuccessViews()
             return true
-        }else{
+        } else {
             view.clearError()
             return false
         }
@@ -66,7 +65,7 @@ class MainPresenter : MainMVP.presenter{
                                 view.showMsgDialog(errorMsg)
                             },
                             { view.showPasswordConfirmActivity() })
-        }catch (exception : Exception){
+        } catch (exception: Exception) {
             view.hideDialog()
             view.showMsgDialog(errorMsg)
         }

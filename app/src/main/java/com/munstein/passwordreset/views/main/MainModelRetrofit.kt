@@ -10,9 +10,8 @@ import retrofit2.Response
  * Created by @Munstein on 23/02/2018.
  */
 class MainModelRetrofit : MainMVP.model {
-    override fun resetPassword(passwordReset: PasswordReset) : Observable<Response<Unit>>{
+    override fun resetPassword(passwordReset: PasswordReset): Observable<Response<Unit>> {
         var api = RetrofitBuilder.getRetrofit().create(ApiInterface::class.java)
         return api.resetPassword(passwordReset)
     }
-
 }

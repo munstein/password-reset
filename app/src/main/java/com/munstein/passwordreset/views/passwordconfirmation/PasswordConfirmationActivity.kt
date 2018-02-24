@@ -1,11 +1,10 @@
 package com.munstein.passwordreset.views.passwordconfirmation
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.munstein.passwordreset.R
+import com.munstein.passwordreset.base.BaseActivity
 
-class PasswordConfirmationActivity : AppCompatActivity() {
-
+class PasswordConfirmationActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_password_confirmation)

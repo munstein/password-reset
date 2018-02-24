@@ -27,18 +27,19 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class MainActivityTests {
 
-    @Rule @JvmField
+    @Rule
+    @JvmField
     val mActivityRule = ActivityTestRule(MainActivity::class.java)
 
     private lateinit var context: Context
 
     @Before
-    fun initContext(){
+    fun initContext() {
         context = InstrumentationRegistry.getInstrumentation().getTargetContext()
     }
 
     @Test
-    fun testDifferentPasswordsErrorAppear(){
+    fun testDifferentPasswordsErrorAppear() {
         onView(withId(R.id.edit_new_password))
                 .perform(typeText("12345"))
         closeSoftKeyboard()
@@ -50,7 +51,7 @@ class MainActivityTests {
     }
 
     @Test
-    fun testLengthPasswordsErrorAppear(){
+    fun testLengthPasswordsErrorAppear() {
         Espresso.onView(withId(R.id.edit_new_password))
                 .perform(typeText("123"))
         closeSoftKeyboard()
@@ -62,7 +63,7 @@ class MainActivityTests {
     }
 
     @Test
-    fun testHasNumberPasswordsErrorAppear(){
+    fun testHasNumberPasswordsErrorAppear() {
         onView(withId(R.id.edit_new_password))
                 .perform(typeText("abcdef"))
         closeSoftKeyboard()
@@ -74,7 +75,7 @@ class MainActivityTests {
     }
 
     @Test
-    fun testWithNoPasswordErrors(){
+    fun testWithNoPasswordErrors() {
         onView(withId(R.id.edit_new_password))
                 .perform(typeText("qazwsx1"))
         closeSoftKeyboard()
@@ -86,7 +87,7 @@ class MainActivityTests {
     }
 
     @Test
-    fun testFullAppFlow(){
+    fun testFullAppFlow() {
         onView(withId(R.id.edit_new_password))
                 .perform(typeText("qazwsx1"))
         closeSoftKeyboard()

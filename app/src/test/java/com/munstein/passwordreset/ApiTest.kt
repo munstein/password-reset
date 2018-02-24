@@ -11,19 +11,19 @@ import org.junit.Test
  */
 class ApiTest {
 
-    lateinit var mainModelRetrofit : MainModelRetrofit
+    lateinit var mainModelRetrofit: MainModelRetrofit
 
     @Before
-    fun init(){
+    fun init() {
         mainModelRetrofit = MainModelRetrofit()
     }
 
     @Test
-    fun testResetPassword(){
+    fun testResetPassword() {
         try {
             var result = mainModelRetrofit.resetPassword(PasswordReset("123456y", 1000)).blockingFirst()
             Assert.assertEquals(200, result.code())
-        }catch(exception : Exception){
+        } catch (exception: Exception) {
             Assert.fail()
         }
     }

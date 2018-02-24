@@ -12,7 +12,7 @@ class PasswordValidatorTest {
     val passwordValidator = PasswordValidator()
 
     @Test
-    fun testPasswordsMatchMinimumSize(){
+    fun testPasswordsMatchMinimumSize() {
         val validTestPassword = "123456"
         val invalidTestPassword = "12345"
         Assert.assertEquals(true,
@@ -22,7 +22,7 @@ class PasswordValidatorTest {
     }
 
     @Test
-    fun testPasswordsMatchHaveAtLeastOneNumber(){
+    fun testPasswordsMatchHaveAtLeastOneNumber() {
         val validTestPassword = "abcde1"
         val invalidTestPassword = "abcdef"
         Assert.assertEquals(true,
@@ -32,15 +32,14 @@ class PasswordValidatorTest {
     }
 
     @Test
-    fun testPasswordsMatchSameValues(){
+    fun testPasswordsMatchSameValues() {
         val password1 = "123456"
-        val password2 = "123456"
         Assert.assertEquals(true,
-                passwordValidator.passwordsAreEqual(password1, password2))
+                passwordValidator.passwordsAreEqual(password1, password1))
     }
 
     @Test
-    fun testPasswordsMatchWithDifferentValues(){
+    fun testPasswordsMatchWithDifferentValues() {
         val password1 = "123456"
         val password2 = "abcdef"
         Assert.assertEquals(false,
@@ -48,15 +47,14 @@ class PasswordValidatorTest {
     }
 
     @Test
-    fun testPasswordIsValid(){
-        val validTestNewPassword = "!1eef0"
-        val validTestConfirmPassword = "!1eef0"
+    fun testPasswordIsValid() {
+        val password = "!1eef0"
         Assert.assertEquals(true,
-                passwordValidator.passwordsAreValid(validTestNewPassword, validTestConfirmPassword))
+                passwordValidator.passwordsAreValid(password, password))
     }
 
     @Test
-    fun testPasswordIsInvalidDifferent(){
+    fun testPasswordIsInvalidDifferent() {
         val validTestNewPassword = "!1eef0"
         val validTestConfirmPassword = "!"
         Assert.assertEquals(false,

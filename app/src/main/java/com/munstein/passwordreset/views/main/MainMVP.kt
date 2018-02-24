@@ -9,14 +9,14 @@ import retrofit2.Response
  */
 interface MainMVP {
 
-    interface presenter{
-        fun validate(password : String, confirmPassword : String) : Boolean
+    interface presenter {
+        fun validate(password: String, confirmPassword: String): Boolean
         fun post(passwordReset: PasswordReset)
     }
 
-    interface view{
-        fun showTextError(msg : String)
-        fun showMsgDialog(msg : String)
+    interface view {
+        fun showTextError(msg: String)
+        fun showMsgDialog(msg: String)
         fun showPasswordNotEqualError()
         fun showPasswordLengthError()
         fun showPasswordNumberError()
@@ -28,7 +28,7 @@ interface MainMVP {
         fun showPasswordConfirmActivity()
     }
 
-    interface model{
-        fun resetPassword(passwordReset: PasswordReset) : Observable<Response<Unit>>
+    interface model {
+        fun resetPassword(passwordReset: PasswordReset): Observable<Response<Unit>>
     }
 }

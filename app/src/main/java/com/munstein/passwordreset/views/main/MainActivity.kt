@@ -9,23 +9,24 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import com.afollestad.materialdialogs.MaterialDialog
-import com.munstein.passwordreset.base.BaseActivity
 import com.munstein.passwordreset.R
+import com.munstein.passwordreset.base.BaseActivity
 import com.munstein.passwordreset.model.PasswordReset
 import com.munstein.passwordreset.util.PasswordValidator
 import com.munstein.passwordreset.views.passwordconfirmation.PasswordConfirmationActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity(), MainMVP.view, View.OnClickListener, TextWatcher{
+class MainActivity : BaseActivity(), MainMVP.view, View.OnClickListener, TextWatcher {
 
-    private lateinit var progressDialog : MaterialDialog
-    private lateinit var msgDialog : MaterialDialog
+    private lateinit var progressDialog: MaterialDialog
+    private lateinit var msgDialog: MaterialDialog
+
     private lateinit var presenter: MainMVP.presenter
 
     private val userId = 1000
 
-    private lateinit var colorStateListError : ColorStateList
-    private lateinit var colorStateListDefault : ColorStateList
+    private lateinit var colorStateListError: ColorStateList
+    private lateinit var colorStateListDefault: ColorStateList
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -53,7 +54,7 @@ class MainActivity : BaseActivity(), MainMVP.view, View.OnClickListener, TextWat
 
     }
 
-    fun init(){
+    fun init() {
         colorStateListError = ColorStateList.valueOf(
                 ContextCompat.getColor(this, R.color.colorError))
 
@@ -90,7 +91,7 @@ class MainActivity : BaseActivity(), MainMVP.view, View.OnClickListener, TextWat
         txt_password_error.text = msg
     }
 
-    override fun showMsgDialog(msg : String){
+    override fun showMsgDialog(msg: String) {
         msgDialog.setContent(msg)
         msgDialog.show()
     }
@@ -98,8 +99,8 @@ class MainActivity : BaseActivity(), MainMVP.view, View.OnClickListener, TextWat
     override fun clearError() {
         txt_password_error.text = ""
 
-        ViewCompat.setBackgroundTintList(edit_new_password,colorStateListDefault)
-        ViewCompat.setBackgroundTintList(edit_repeat_password,colorStateListDefault)
+        ViewCompat.setBackgroundTintList(edit_new_password, colorStateListDefault)
+        ViewCompat.setBackgroundTintList(edit_repeat_password, colorStateListDefault)
     }
 
     override fun showErrorViews() {
@@ -107,8 +108,8 @@ class MainActivity : BaseActivity(), MainMVP.view, View.OnClickListener, TextWat
         imgview_locker.setImageDrawable(getDrawable(R.drawable.ic_password))
         btn_confirm.isEnabled = false
 
-        ViewCompat.setBackgroundTintList(edit_new_password,colorStateListError)
-        ViewCompat.setBackgroundTintList(edit_repeat_password,colorStateListError)
+        ViewCompat.setBackgroundTintList(edit_new_password, colorStateListError)
+        ViewCompat.setBackgroundTintList(edit_repeat_password, colorStateListError)
     }
 
     override fun showSuccessViews() {
@@ -129,4 +130,5 @@ class MainActivity : BaseActivity(), MainMVP.view, View.OnClickListener, TextWat
         val intent = Intent(this, PasswordConfirmationActivity::class.java)
         startActivity(intent)
     }
+
 }
