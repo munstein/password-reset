@@ -125,7 +125,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtinput_new_password"
                 android:layout_marginEnd="@dimen/edit_reset_password_margin"
-                android:layout_marginStart="@dimen/edit_reset_password_margin"
+                android:layout_marginStart="38dp"
+                android:text="111"
                 android:textColor="@color/colorError"
                 android:textSize="@dimen/text_small" />
 
